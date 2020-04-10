@@ -1,0 +1,37 @@
+house_pipe2 = Pipeline([
+
+    # missing data imputation - section 4
+    ('missing_ind',
+     mdi.AddNaNBinaryImputer(
+         variables=['LotFrontage', 'MasVnrArea', 'GarageYrBlt'])),
+    
+    ('imputer_num',
+    mdi.RandomSampleImputer(random_state=0,
+      variables=['LotFrontage', 'MasVnrArea', 'GarageYrBlt'])),
+
+    
+    ('imputer_cat', mdi.FrequentCategoryImputer(variables=categorical)),
+
+    
+    # categorical encoding - section 6
+    ('rare_label_enc',
+     ce.RareLabelCategoricalEncoder(tol=0.05,
+                                    n_categories=6,
+                                    variables=categorical + discrete)),
+    ('categorical_enc',
+     ce.OrdinalCategoricalEncoder(encoding_method='ordered',
+                                  variables=categorical + discrete)),
+   
+    # Outlier capping for numerical variables
+    ('winsorisor',Winsorizer(distribution='skewed',
+                            tail='right',
+                            fold=1.5,
+                            variables=numerical)),
+
+
+    # feature Scaling - section 10
+    ('scaler', StandardScaler()),
+
+    # regression
+    ('lasso', Lasso(random_state=0))
+])
