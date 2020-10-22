@@ -4,12 +4,12 @@
 
 Published November 2019
 
-[<img src="logo.jpg" width="248">](https://www.udemy.com/feature-engineering-for-machine-learning/?couponCode=FEATENGREPO)
+[<img src="logo.jpg" width="248">](https://www.udemy.com/course/feature-engineering-for-machine-learning/?referralCode=A855148E05283015CF06)
 
 
 ## Links
 
-- [Course Page](https://www.udemy.com/feature-engineering-for-machine-learning/?couponCode=FEATENGREPO)
+- [Course Page](https://www.udemy.com/course/feature-engineering-for-machine-learning/?referralCode=A855148E05283015CF06)
 
 Final challenge / assignment for the Udemy course: Feature Engineering for Machine Learning
 
